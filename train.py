@@ -8,12 +8,12 @@ from models.VDSR import VDSR
 from dataLoader.T91 import T91
 
 
-train_file = './data/91-image_x4.h5'
+train_file = './dataset/91-image_x4.h5'
 outputs_dir = './data'
 scale = 4 
 learning_rate = 1e-3
 batch_size = 16
-num_epochs = 11
+num_epochs = 1
 print('*** set parameters ***')
 
 
@@ -28,7 +28,7 @@ train_dataloader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuf
 
 print('*** begin train ***')
 
-for epoch in range(1, num_epochs + 1):
+for epoch in range(0, num_epochs):
     for img, labels in train_dataloader:
 
         img = img.to(device)
